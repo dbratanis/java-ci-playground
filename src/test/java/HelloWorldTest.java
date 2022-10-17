@@ -8,7 +8,7 @@ class HelloWorldTest {
 	@Test
 	void testPrintMethod() {
 		
-		String inputValue = "trelos";
+		String inputValue = "FC";
 		String excpectedResult = "FC";
 	
 		var result = HelloWorld.WelcomeMessage(inputValue);
