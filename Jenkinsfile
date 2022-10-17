@@ -7,14 +7,17 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'mvn -B -DskipTests clean validate compile package'
+        sh 'mvn -B -DskipTests clean validate compile package install'
       }
       post {
+        always {
+            archiveArtifacts artifacts: "target/*.jar", fingerprint: true
+        }
         success {
-          echo "Build ok"
+          echo 'Build ok'
         }
         failure {
-          echo "Build failed"
+          echo 'Build failed'
         }
       }
     }
@@ -27,12 +30,23 @@ pipeline {
           junit "target/surefire-reports/*.xml"
         }
         success {
-          echo "Build ok"
+          echo 'Test ok'
         }
         failure {
-          echo "Build failed"
+          echo 'Test failed'
         }
       }
+    }
+    stage('Deploy'){
+      steps {
+        echo 'Deploying..'
+      }
+    }
+  }
+
+  post {
+    always {
+        deleteDir() 
     }
   }
 }
