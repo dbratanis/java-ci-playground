@@ -1,3 +1,3 @@
 # Java CI Playground
 
-Testing a java CI pipeline with maven.
+Testing a java CI pipeline with maven!
