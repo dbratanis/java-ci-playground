@@ -5,19 +5,13 @@ pipeline {
         jdk 'open-jdk-11' 
     }
     stages {
-        stage ('Validate') {
-            steps {
-                sh 'mvn validate'
-            }
-        }
-
         stage ('Build') {
             steps {
-                sh 'mvn compile'
+                sh 'mvn validate compile'
             }
         }
 
-        stage ('Tests') {
+        stage ('Test') {
             steps {
                 sh 'mvn test'
             }
