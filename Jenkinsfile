@@ -37,12 +37,13 @@ pipeline {
         }
       }
     }
-  }
-  stage('Deploy'){
-    steps {
+    stage('Deploy'){
+      steps {
         echo 'Deploying..'
+      }
     }
   }
+
   post {
     always {
         deleteDir() 
