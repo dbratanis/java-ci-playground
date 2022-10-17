@@ -1,11 +1,11 @@
-node{
-    stage('Validate'){
-        sh 'mvn validate'
-    }
-    stage('Compile'){
-        sh 'mvn compile'
-    }
-    stage('test'){
-        sh 'mvn test'
-    }
+node {
+  stage('Validate') {
+    sh 'mvn validate'
+  }
+  stage('Compile') {
+    sh 'mvn compile'
+  }
+  stage('test') {
+    sh 'mvn test'
+  }
 }
