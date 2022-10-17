@@ -1,11 +1,13 @@
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import com.db.*;
 
 class HelloWorldTest {
 
 	@Test
+	@DisplayName("Test WelcomeMessage input")
 	void testPrintMethod() {
 		
 		String inputValue = "FC";
@@ -14,15 +16,5 @@ class HelloWorldTest {
 		var result = HelloWorld.WelcomeMessage(inputValue);
 		
 		assertTrue(result.contains(excpectedResult));
-	}
-	
-	@Test
-	void testMain() {
-		HelloWorld.main(null);
-	}
-
-	@Test 
-	void testMainClass() {
-		new HelloWorld();
 	}
 }
