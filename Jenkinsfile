@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'mvn validate compile'
+        sh 'mvn -B -DskipTests clean validate compile package'
       }
       post {
         success {
@@ -23,11 +23,14 @@ pipeline {
         sh 'mvn test'
       }
       post {
+        always {
+          junit "target/surefire-reports/*.xml"
+        }
         success {
-          echo "Tests ok"
+          echo "Build ok"
         }
         failure {
-          echo "Tests failed"
+          echo "Build failed"
         }
       }
     }
