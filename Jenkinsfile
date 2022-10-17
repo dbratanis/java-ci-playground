@@ -6,7 +6,7 @@ pipeline {
   }
   stages {
     stage('Build') {
-      steps {
+      withMaven {
         sh 'mvn validate compile'
       }
       post {
@@ -19,7 +19,7 @@ pipeline {
       }
     }
     stage('Test') {
-      steps {
+      withMaven {
         sh 'mvn test'
       }
       post {
