@@ -1,5 +1,5 @@
 /**
- * This module is the HelloWorld
+ * This module is the HelloWorld.
  * <p>
  * HelloWorld Package
  * </p>
