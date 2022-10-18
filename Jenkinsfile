@@ -6,7 +6,6 @@ pipeline {
           docker { 
             image 'maven:3.8.3-adoptopenjdk-11' 
             args '-v $HOME/.m2:/root/.m2'
-            reuseNode true
           }
         }
       steps {
