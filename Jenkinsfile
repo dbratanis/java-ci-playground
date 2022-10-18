@@ -1,11 +1,14 @@
 pipeline {
   agent any
-  tools {
-    maven 'maven 3.6.3'
-    jdk 'open-jdk-11'
-  }
   stages {
     stage('Build') {
+        agent { 
+          docker { 
+            image 'maven:3.8.3-adoptopenjdk-11' 
+            args '-v $HOME/.m2:/root/.m2'
+            reuseNode true
+          }
+        }
       steps {
         sh 'mvn -B -DskipTests clean validate compile package install'
       }
@@ -22,6 +25,12 @@ pipeline {
       }
     }
     stage('Test') {
+      agent { 
+          docker { 
+            image 'maven:3.8.3-adoptopenjdk-11' 
+            args '-v $HOME/.m2:/root/.m2'
+          }
+      }
       steps {
         sh 'mvn test'
       }
