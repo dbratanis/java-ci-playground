@@ -1,15 +1,35 @@
+
 package com.db;
 
-public class HelloWorld {
+/**
+ * HelloWorld Class.
+ */
+public final class HelloWorld {
 
-	public static void main(String[] args) {
-		
-		var result = WelcomeMessage("Welcome to FC");
-		System.out.println(result);
-	}
+    /**
+     * Default constructor for HelloWorld.
+     */
+    private HelloWorld() {
+    }
 
-	public static String WelcomeMessage(String text) {
-		return text + " Barcelona";
-	}
+    /**
+    * Main.
+    * @param args
+    */
+    public static void main(final String[] args) {
+
+        var result = welcomeMessage("Welcome to FC");
+        System.out.println(result);
+    }
+
+
+    /**
+     * Concats input string with the Barcelona.
+     * @param text
+     * @return A concatenate string
+     */
+    public static String welcomeMessage(final String text) {
+        return text + " Barcelona";
+    }
 
 }
