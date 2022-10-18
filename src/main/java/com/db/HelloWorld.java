@@ -1,18 +1,29 @@
-/*
- *This is the HelloWorld Package
- */
+
 package com.db;
 
-public class HelloWorld {
+/**
+ * HelloWorld Class
+ */
+public final class HelloWorld {
 
-	public static void main(String[] args) {
+    /**
+    * Main
+    * @param args
+    */
+    public static void main(final String[] args) {
 
-		var result = WelcomeMessage("Welcome to FC");
-		System.out.println(result);
-	}
+        var result = welcomeMessage("Welcome to FC");
+        System.out.println(result);
+    }
 
-	public static String WelcomeMessage(String text) {
-		return text + " Barcelona";
-	}
+
+    /**
+     * Concats input string with the Barcelona
+     * @param text
+     * @return
+     */
+    public static String welcomeMessage(String text) {
+        return text + " Barcelona";
+    }
 
 }
