@@ -2,12 +2,18 @@
 package com.db;
 
 /**
- * HelloWorld Class
+ * HelloWorld Class.
  */
 public final class HelloWorld {
 
     /**
-    * Main
+     * Default constructor for HelloWorld.
+     */
+    private HelloWorld() {
+    }
+
+    /**
+    * Main.
     * @param args
     */
     public static void main(final String[] args) {
@@ -18,11 +24,11 @@ public final class HelloWorld {
 
 
     /**
-     * Concats input string with the Barcelona
+     * Concats input string with the Barcelona.
      * @param text
-     * @return
+     * @return A concatenate string
      */
-    public static String welcomeMessage(String text) {
+    public static String welcomeMessage(final String text) {
         return text + " Barcelona";
     }
 
